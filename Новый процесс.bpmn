@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="https://process.local/bpmn">
+<bpmn:process id="Process_1" name="Новый процесс" isExecutable="false">
+<bpmn:startEvent id="Node_mwxbptn8_mnqstoz9" name="Получение заявки"><bpmn:outgoing>Flow_mwxbr1ou_3vim2ze9</bpmn:outgoing></bpmn:startEvent>
+<bpmn:task id="Node_mwxbq9e9_mpnsg3o6" name="Регистрация заявки"><bpmn:incoming>Flow_mwxbr1ou_3vim2ze9</bpmn:incoming><bpmn:outgoing>Flow_mwxbtv82_sexvrzi1</bpmn:outgoing></bpmn:task>
+<bpmn:task id="Node_mwxbs61l_uuqcvqs9" name="Проверка заявки"><bpmn:incoming>Flow_mwxbtv82_sexvrzi1</bpmn:incoming><bpmn:outgoing>Flow_mwxbunlz_3ps8rkq0</bpmn:outgoing></bpmn:task>
+<bpmn:exclusiveGateway id="Node_mwxbsl7l_u3gpabfv" name="Заявка одобрена?"><bpmn:incoming>Flow_mwxbunlz_3ps8rkq0</bpmn:incoming><bpmn:outgoing>Flow_mwxbu50v_pa8d8zmd</bpmn:outgoing><bpmn:outgoing>Flow_mwxbuvb6_0o66pmvk</bpmn:outgoing></bpmn:exclusiveGateway>
+<bpmn:task id="Node_mwxbt08h_gtwt38aj" name="Подготовка договора"><bpmn:incoming>Flow_mwxbu50v_pa8d8zmd</bpmn:incoming><bpmn:outgoing>Flow_mwxbv0o9_t0bl2wic</bpmn:outgoing></bpmn:task>
+<bpmn:task id="Node_mwxbt9wv_wqc3ukhf" name="Уведомление об отказе"><bpmn:incoming>Flow_mwxbuvb6_0o66pmvk</bpmn:incoming><bpmn:outgoing>Flow_mwxbv3wh_w2smkzk3</bpmn:outgoing></bpmn:task>
+<bpmn:endEvent id="Node_mwxbtnxy_rttkipuu" name="Обработка завершена"><bpmn:incoming>Flow_mwxbv0o9_t0bl2wic</bpmn:incoming><bpmn:incoming>Flow_mwxbv3wh_w2smkzk3</bpmn:incoming></bpmn:endEvent>
+<bpmn:sequenceFlow id="Flow_mwxbr1ou_3vim2ze9" name="" sourceRef="Node_mwxbptn8_mnqstoz9" targetRef="Node_mwxbq9e9_mpnsg3o6"/>
+<bpmn:sequenceFlow id="Flow_mwxbtv82_sexvrzi1" name="" sourceRef="Node_mwxbq9e9_mpnsg3o6" targetRef="Node_mwxbs61l_uuqcvqs9"/>
+<bpmn:sequenceFlow id="Flow_mwxbu50v_pa8d8zmd" name="Да" sourceRef="Node_mwxbsl7l_u3gpabfv" targetRef="Node_mwxbt08h_gtwt38aj"/>
+<bpmn:sequenceFlow id="Flow_mwxbunlz_3ps8rkq0" name="" sourceRef="Node_mwxbs61l_uuqcvqs9" targetRef="Node_mwxbsl7l_u3gpabfv"/>
+<bpmn:sequenceFlow id="Flow_mwxbuvb6_0o66pmvk" name="Нет" sourceRef="Node_mwxbsl7l_u3gpabfv" targetRef="Node_mwxbt9wv_wqc3ukhf"/>
+<bpmn:sequenceFlow id="Flow_mwxbv0o9_t0bl2wic" name="" sourceRef="Node_mwxbt08h_gtwt38aj" targetRef="Node_mwxbtnxy_rttkipuu"/>
+<bpmn:sequenceFlow id="Flow_mwxbv3wh_w2smkzk3" name="" sourceRef="Node_mwxbt9wv_wqc3ukhf" targetRef="Node_mwxbtnxy_rttkipuu"/>
+</bpmn:process>
+<bpmndi:BPMNDiagram id="Diagram_1"><bpmndi:BPMNPlane id="Plane_1" bpmnElement="Process_1">
+<bpmndi:BPMNShape id="Shape_Node_mwxbptn8_mnqstoz9" bpmnElement="Node_mwxbptn8_mnqstoz9"><dc:Bounds x="389.1111145019531" y="23.777801513671875" width="44" height="44"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Node_mwxbq9e9_mpnsg3o6" bpmnElement="Node_mwxbq9e9_mpnsg3o6"><dc:Bounds x="339.111083984375" y="134.2222137451172" width="144" height="70"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Node_mwxbs61l_uuqcvqs9" bpmnElement="Node_mwxbs61l_uuqcvqs9"><dc:Bounds x="336.4445495605469" y="249.22219848632812" width="144" height="70"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Node_mwxbsl7l_u3gpabfv" bpmnElement="Node_mwxbsl7l_u3gpabfv"><dc:Bounds x="377.2222900390625" y="357.111083984375" width="64" height="64"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Node_mwxbt08h_gtwt38aj" bpmnElement="Node_mwxbt08h_gtwt38aj"><dc:Bounds x="122.99996948242188" y="385.4443664550781" width="144" height="70"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Node_mwxbt9wv_wqc3ukhf" bpmnElement="Node_mwxbt9wv_wqc3ukhf"><dc:Bounds x="568.4444580078125" y="395.0000305175781" width="144" height="70"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Shape_Node_mwxbtnxy_rttkipuu" bpmnElement="Node_mwxbtnxy_rttkipuu"><dc:Bounds x="381.1111145019531" y="498.33349609375" width="44" height="44"/></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="Edge_Flow_mwxbr1ou_3vim2ze9" bpmnElement="Flow_mwxbr1ou_3vim2ze9"><di:waypoint x="411.11110906317543" y="67.77780151367188"/><di:waypoint x="411.1110926369759" y="134.2222137451172"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_mwxbtv82_sexvrzi1" bpmnElement="Flow_mwxbtv82_sexvrzi1"><di:waypoint x="410.2995299216157" y="204.2222137451172"/><di:waypoint x="409.25610362330616" y="249.22219848632812"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_mwxbu50v_pa8d8zmd" bpmnElement="Flow_mwxbu50v_pa8d8zmd"><di:waypoint x="377.2222900390625" y="393.7915721634646"/><di:waypoint x="266.9999694824219" y="409.9132680521265"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_mwxbunlz_3ps8rkq0" bpmnElement="Flow_mwxbunlz_3ps8rkq0"><di:waypoint x="408.70407102098375" y="319.2221984863281"/><di:waypoint x="408.9850132752345" y="357.111083984375"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_mwxbuvb6_0o66pmvk" bpmnElement="Flow_mwxbuvb6_0o66pmvk"><di:waypoint x="441.2222900390625" y="394.7699111658559"/><di:waypoint x="568.4444580078125" y="417.26766935924616"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_mwxbv0o9_t0bl2wic" bpmnElement="Flow_mwxbv0o9_t0bl2wic"><di:waypoint x="266.9999694824219" y="455.00290647612985"/><di:waypoint x="381.1111145019531" y="509.77394219842864"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="Edge_Flow_mwxbv3wh_w2smkzk3" bpmnElement="Flow_mwxbv3wh_w2smkzk3"><di:waypoint x="568.4444580078125" y="457.40456384360783"/><di:waypoint x="425.1111145019531" y="511.95988868857427"/></bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

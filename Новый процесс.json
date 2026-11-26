@@ -1,0 +1,98 @@
+{
+  "title": "Новый процесс",
+  "nodes": [
+    {
+      "id": "Node_mwxbptn8_mnqstoz9",
+      "type": "start",
+      "name": "Получение заявки",
+      "x": 411.1111145019531,
+      "y": 45.777801513671875
+    },
+    {
+      "id": "Node_mwxbq9e9_mpnsg3o6",
+      "type": "task",
+      "name": "Регистрация заявки",
+      "x": 411.111083984375,
+      "y": 169.2222137451172
+    },
+    {
+      "id": "Node_mwxbs61l_uuqcvqs9",
+      "type": "task",
+      "name": "Проверка заявки",
+      "x": 408.4445495605469,
+      "y": 284.2221984863281
+    },
+    {
+      "id": "Node_mwxbsl7l_u3gpabfv",
+      "type": "gateway",
+      "name": "Заявка одобрена?",
+      "x": 409.2222900390625,
+      "y": 389.111083984375
+    },
+    {
+      "id": "Node_mwxbt08h_gtwt38aj",
+      "type": "task",
+      "name": "Подготовка договора",
+      "x": 194.99996948242188,
+      "y": 420.4443664550781
+    },
+    {
+      "id": "Node_mwxbt9wv_wqc3ukhf",
+      "type": "task",
+      "name": "Уведомление об отказе",
+      "x": 640.4444580078125,
+      "y": 430.0000305175781
+    },
+    {
+      "id": "Node_mwxbtnxy_rttkipuu",
+      "type": "end",
+      "name": "Обработка завершена",
+      "x": 403.1111145019531,
+      "y": 520.33349609375
+    }
+  ],
+  "edges": [
+    {
+      "id": "Flow_mwxbr1ou_3vim2ze9",
+      "source": "Node_mwxbptn8_mnqstoz9",
+      "target": "Node_mwxbq9e9_mpnsg3o6",
+      "name": ""
+    },
+    {
+      "id": "Flow_mwxbtv82_sexvrzi1",
+      "source": "Node_mwxbq9e9_mpnsg3o6",
+      "target": "Node_mwxbs61l_uuqcvqs9",
+      "name": ""
+    },
+    {
+      "id": "Flow_mwxbu50v_pa8d8zmd",
+      "source": "Node_mwxbsl7l_u3gpabfv",
+      "target": "Node_mwxbt08h_gtwt38aj",
+      "name": "Да"
+    },
+    {
+      "id": "Flow_mwxbunlz_3ps8rkq0",
+      "source": "Node_mwxbs61l_uuqcvqs9",
+      "target": "Node_mwxbsl7l_u3gpabfv",
+      "name": ""
+    },
+    {
+      "id": "Flow_mwxbuvb6_0o66pmvk",
+      "source": "Node_mwxbsl7l_u3gpabfv",
+      "target": "Node_mwxbt9wv_wqc3ukhf",
+      "name": "Нет"
+    },
+    {
+      "id": "Flow_mwxbv0o9_t0bl2wic",
+      "source": "Node_mwxbt08h_gtwt38aj",
+      "target": "Node_mwxbtnxy_rttkipuu",
+      "name": ""
+    },
+    {
+      "id": "Flow_mwxbv3wh_w2smkzk3",
+      "source": "Node_mwxbt9wv_wqc3ukhf",
+      "target": "Node_mwxbtnxy_rttkipuu",
+      "name": ""
+    }
+  ]
+}
